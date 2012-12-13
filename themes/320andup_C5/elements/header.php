@@ -17,7 +17,9 @@ Port to Concrete 5 - Mario Noble Version 0.1.0
 <!-- HTML5 Boilerplate -->
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en">
+	<script src="<?php bloginfo('template_directory') ?>/respond.min.js"></script>
+	<script src="<?php bloginfo('template_directory') ?>/selectivizr-min.js"></script><![endif]-->
 <!--[if gt IE 8]><!--><html><!--<![endif]-->
 <?php
 /* could include below in html tag - not doing so to make more flexibile for multilanguage sites
