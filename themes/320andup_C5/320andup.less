@@ -4,7 +4,8 @@
 Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
 Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
-
+version port to C5 : Mario Noble;
+v0.0.8
 ============================================================ */
 
 // 1. ROOT 					==============================
@@ -105,10 +106,16 @@ height: auto;
 
 /* js driven drop down - degrades to a simple list with no js */
 
-#logo-area a {
 
-.font-size(40);
+#logo-area {
 
+	text-align: center;
+
+	a {
+
+	.font-size(40);
+
+	}
 }
 
 #header-nav {
@@ -123,8 +130,8 @@ height: auto;
 
 	li a {
 		text-decoration: none;
-		.vertical();
 		margin-top:.25rem;
+		font-family: 'nexa_boldregular';
 		border:1px solid @bordercolor;
 		padding: 1rem;
 		display: none;  //stops flicker of nav buttons showing - may cause problems with screen readers
@@ -224,6 +231,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
 // Modules and panels
 @import "upstarts/320andup-modules/upstart.less";
 @import "upstarts/320andup-panels/upstart.less";
+
+
 
 
 

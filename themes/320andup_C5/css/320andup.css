@@ -4,7 +4,8 @@
 Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
 Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
-
+version port to C5 : Mario Noble;
+v0.0.8
 ============================================================ */
 /* Reset =================================================== */
 html,
@@ -132,7 +133,7 @@ html {
   background: #ffffff;
   font-size: 62.5%;
   -webkit-overflow-scrolling: touch;
-  -webkit-tap-highlight-color: #f3f5f6;
+  -webkit-tap-highlight-color: #ffffff;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -145,9 +146,23 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5em;
-  color: #000000;
+  color: #999999;
 }
 /* Typography =================================================== */
+@font-face {
+  font-family: 'nexa_lightregular';
+  src: url(Nexa_Free_Light-webfont.eot);
+  src: url(Nexa_Free_Light-webfont.eot?#iefix) format('embedded-opentype'), url(Nexa_Free_Light-webfont.woff) format('woff'), url(Nexa_Free_Light-webfont.ttf) format('truetype'), url(Nexa_Free_Light-webfont.svg#nexa_lightregular) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'nexa_boldregular';
+  src: url(Nexa_Free_Bold-webfont.eot);
+  src: url(Nexa_Free_Bold-webfont.eot?#iefix) format('embedded-opentype'), url(Nexa_Free_Bold-webfont.woff) format('woff'), url(Nexa_Free_Bold-webfont.ttf) format('truetype'), url(Nexa_Free_Bold-webfont.svg#nexa_boldregular) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 h1,
 h2,
 h3,
@@ -155,9 +170,9 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-family: inherit;
-  font-weight: bold;
-  color: inherit;
+  font-family: "nexa_lightregular";
+  font-weight: 100;
+  color: #8bc53f;
   text-rendering: optimizelegibility;
 }
 h1 small,
@@ -171,6 +186,7 @@ h1,
   font-size: 32px;
   font-size: 3.2rem;
   line-height: 1.2;
+  color: #26A9E0;
 }
 h2,
 .h2 {
@@ -224,12 +240,12 @@ h6,
   padding: 4px 12px;
   font-size: 14px;
   font-size: 1.4rem;
-  background-color: #f3f5f6;
+  background-color: #ffffff;
 }
 .header h1:hover,
 .header h2:hover,
 .header h3:hover {
-  background-color: #f3f5f6;
+  background-color: #ffffff;
 }
 .header .a-rss,
 .header .a-rss:hover {
@@ -270,7 +286,7 @@ li ol {
 blockquote {
   margin: 0 0 1.5em -24px;
   padding-left: 24px;
-  border-left: 2px solid #c7ced6;
+  border-left: 2px solid #ffffff;
   font-family: Cambria, Georgia, Times, "Times New Roman";
   font-style: normal;
 }
@@ -304,7 +320,7 @@ dt {
   margin-left: 22.78%;
 }
 abbr[title] {
-  border-bottom: 1px dotted #c7ced6;
+  border-bottom: 1px dotted #ffffff;
   cursor: help;
 }
 b,
@@ -315,13 +331,13 @@ dfn {
   font-style: italic;
 }
 ins {
-  background-color: #f3f5f6;
-  color: #000000;
+  background-color: #ffffff;
+  color: #999999;
   text-decoration: none;
 }
 mark {
-  background-color: #f3f5f6;
-  color: #000000;
+  background-color: #ffffff;
+  color: #999999;
   font-style: italic;
   font-weight: bold;
 }
@@ -356,31 +372,31 @@ sub {
 /* Colour =================================================== */
 a {
   text-decoration: none;
-  color: #013568;
+  color: #be1e2d;
 }
 a:visited {
-  color: #000203;
+  color: #661018;
 }
 a:hover {
   text-decoration: underline;
-  color: #011b35;
+  color: #921723;
 }
 a:focus {
   outline: thin dotted;
-  color: #000000;
+  color: #3a090e;
 }
 a:hover,
 a:active {
   outline: 0;
 }
 ::-moz-selection {
-  background-color: #d6dbe1;
-  color: #2d353e;
+  background-color: #ffffff;
+  color: #929497;
   text-shadow: none;
 }
 ::selection {
-  background-color: #d6dbe1;
-  color: #2d353e;
+  background-color: #ffffff;
+  color: #929497;
   text-shadow: none;
 }
 .swatch {
@@ -406,16 +422,16 @@ a:active {
   height: 50px;
 }
 .swatch-base span:nth-child(1) {
-  background-color: rgba(45, 53, 62, 0.9);
+  background-color: rgba(146, 147, 150, 0.9);
 }
 .swatch-base span:nth-child(2) {
-  background-color: rgba(45, 53, 62, 0.8);
+  background-color: rgba(146, 147, 150, 0.8);
 }
 .swatch-base span:nth-child(3) {
-  background-color: rgba(45, 53, 62, 0.7);
+  background-color: rgba(146, 147, 150, 0.7);
 }
 .swatch-base span:nth-child(4) {
-  background-color: rgba(45, 53, 62, 0.6);
+  background-color: rgba(146, 147, 150, 0.6);
 }
 .swatch-alert span:nth-child(1) {
   background-color: rgba(252, 248, 227, 0.9);
@@ -603,23 +619,23 @@ a:active {
   color: #ffffff;
 }
 .basegrad {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2d353e), to(#181c20));
-  background-image: -webkit-linear-gradient(top, #2d353e, #181c20);
-  background-color: #181c20;
-  background-image: -moz-linear-gradient(top, #2d353e, #181c20);
-  background-image: -ms-linear-gradient(top, #2d353e, #181c20);
-  background-image: -o-linear-gradient(top, #2d353e, #181c20);
-  background-image: linear-gradient(top, #2d353e, #181c20);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#929497), to(#787a7e));
+  background-image: -webkit-linear-gradient(top, #929497, #787a7e);
+  background-color: #787a7e;
+  background-image: -moz-linear-gradient(top, #929497, #787a7e);
+  background-image: -ms-linear-gradient(top, #929497, #787a7e);
+  background-image: -o-linear-gradient(top, #929497, #787a7e);
+  background-image: linear-gradient(top, #929497, #787a7e);
   background-repeat: repeat-x;
 }
 .errorgrad {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2d353e), to(#c72f29));
-  background-image: -webkit-linear-gradient(top, #2d353e, #c72f29);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#929497), to(#c72f29));
+  background-image: -webkit-linear-gradient(top, #929497, #c72f29);
   background-color: #c72f29;
-  background-image: -moz-linear-gradient(top, #2d353e, #c72f29);
-  background-image: -ms-linear-gradient(top, #2d353e, #c72f29);
-  background-image: -o-linear-gradient(top, #2d353e, #c72f29);
-  background-image: linear-gradient(top, #2d353e, #c72f29);
+  background-image: -moz-linear-gradient(top, #929497, #c72f29);
+  background-image: -ms-linear-gradient(top, #929497, #c72f29);
+  background-image: -o-linear-gradient(top, #929497, #c72f29);
+  background-image: linear-gradient(top, #929497, #c72f29);
   background-repeat: repeat-x;
 }
 .greygrad {
@@ -676,14 +692,14 @@ a:active {
   min-height: 21px;
   padding: 11px;
   margin-bottom: 1.5em;
-  background-color: #f3f5f6;
-  border: 1px solid #b8c1cb;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 10px #d6dbe1;
-  -moz-box-shadow: inset 0 1px 10px #d6dbe1;
-  box-shadow: inset 0 1px 10px #d6dbe1;
+  -webkit-box-shadow: inset 0 1px 10px #e6e6e6;
+  -moz-box-shadow: inset 0 1px 10px #e6e6e6;
+  box-shadow: inset 0 1px 10px #e6e6e6;
 }
 .well p:last-child {
   margin-bottom: 0;
@@ -1210,7 +1226,7 @@ hr {
   padding: 0;
   height: 1px;
   border: 0;
-  border-top: 1px solid #c7ced6;
+  border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
 }
 img {
@@ -1243,7 +1259,7 @@ figure figcaption {
 .list-bordered li {
   margin-bottom: 0.375em;
   padding-bottom: 0.375em;
-  border-bottom: 1px dashed #c7ced6;
+  border-bottom: 1px dashed #ffffff;
 }
 .list-bordered li:last-child {
   margin-bottom: 0;
@@ -1265,9 +1281,9 @@ form legend {
   margin-bottom: 3em;
   *margin-left: -7px;
   padding: 0;
-  color: #000000;
+  color: #999999;
   border: 0;
-  border-bottom: 1px solid #8c9bab;
+  border-bottom: 1px solid #fafafb;
   white-space: normal;
 }
 form legend small {
@@ -1310,7 +1326,7 @@ label {
   display: block;
   margin-bottom: 0.1875em;
   font-weight: bold;
-  color: #000000;
+  color: #999999;
   cursor: pointer;
 }
 label input,
@@ -1326,13 +1342,13 @@ select {
   padding: 4px;
   margin-bottom: 0.375em;
   background-color: #ffffff;
-  border: 1px solid #8c9bab;
-  color: #000000;
+  border: 1px solid #fafafb;
+  color: #999999;
 }
 input:hover,
 textarea:hover,
 select:hover {
-  border-color: #586879;
+  border-color: #c6c7c9;
 }
 .input-mini {
   width: 60px;
@@ -1449,7 +1465,7 @@ textarea[readonly] {
 }
 input:focus,
 textarea:focus {
-  border-color: #2d353e, 40%;
+  border-color: #929497, 40%;
   outline: 0;
   outline: thin dotted \9;
 }
@@ -1586,13 +1602,13 @@ input[type="submit"].btn:hover {
   cursor: default;
 }
 .btn-error {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2d353e), to(#c72f29));
-  background-image: -webkit-linear-gradient(top, #2d353e, #c72f29);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#929497), to(#c72f29));
+  background-image: -webkit-linear-gradient(top, #929497, #c72f29);
   background-color: #c72f29;
-  background-image: -moz-linear-gradient(top, #2d353e, #c72f29);
-  background-image: -ms-linear-gradient(top, #2d353e, #c72f29);
-  background-image: -o-linear-gradient(top, #2d353e, #c72f29);
-  background-image: linear-gradient(top, #2d353e, #c72f29);
+  background-image: -moz-linear-gradient(top, #929497, #c72f29);
+  background-image: -ms-linear-gradient(top, #929497, #c72f29);
+  background-image: -o-linear-gradient(top, #929497, #c72f29);
+  background-image: linear-gradient(top, #929497, #c72f29);
   background-repeat: repeat-x;
   border-color: #b22a24;
   border-bottom-color: #9d2520;
@@ -1637,16 +1653,16 @@ input[type="submit"].btn:hover {
   color: #ffffff;
 }
 .btn-primary {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2d353e), to(#181c20));
-  background-image: -webkit-linear-gradient(top, #2d353e, #181c20);
-  background-color: #181c20;
-  background-image: -moz-linear-gradient(top, #2d353e, #181c20);
-  background-image: -ms-linear-gradient(top, #2d353e, #181c20);
-  background-image: -o-linear-gradient(top, #2d353e, #181c20);
-  background-image: linear-gradient(top, #2d353e, #181c20);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#929497), to(#787a7e));
+  background-image: -webkit-linear-gradient(top, #929497, #787a7e);
+  background-color: #787a7e;
+  background-image: -moz-linear-gradient(top, #929497, #787a7e);
+  background-image: -ms-linear-gradient(top, #929497, #787a7e);
+  background-image: -o-linear-gradient(top, #929497, #787a7e);
+  background-image: linear-gradient(top, #929497, #787a7e);
   background-repeat: repeat-x;
-  border-color: #0d0f12;
-  border-bottom-color: #020203;
+  border-color: #6c6e71;
+  border-bottom-color: #5f6164;
   color: #ffffff;
 }
 .btn-primary:visited,
@@ -1854,14 +1870,14 @@ table thead:first-child tr:first-child td {
   padding: 4px 5px;
 }
 .table-bordered {
-  border: 1px solid #8c9bab;
+  border: 1px solid #fafafb;
   border-left: 0;
   border-collapse: separate;
   *border-collapse: collapsed;
 }
 .table-bordered th,
 .table-bordered td {
-  border-left: 1px solid #8c9bab;
+  border-left: 1px solid #fafafb;
 }
 .table-bordered thead:first-child tr:first-child th,
 .table-bordered tbody:first-child tr:first-child th,
@@ -1870,7 +1886,7 @@ table thead:first-child tr:first-child td {
 }
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-  background-color: #c7ced6;
+  background-color: #ffffff;
 }
 @media print {
   /* Print =================================================== */
@@ -1945,6 +1961,9 @@ img {
 }
 /* c5 theme tweaks */
 /* js driven drop down - degrades to a simple list with no js */
+#logo-area {
+  text-align: center;
+}
 #logo-area a {
   font-size: 40px;
   font-size: 4rem;
@@ -1960,16 +1979,9 @@ img {
 }
 #header-nav li a {
   text-decoration: none;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-color: #e6e6e6;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(top, #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
   margin-top: .25rem;
-  border: 1px solid #c7ced6;
+  font-family: 'nexa_boldregular';
+  border: 1px solid #ffffff;
   padding: 1rem;
   display: none;
 }
@@ -1997,7 +2009,7 @@ img {
   background-image: linear-gradient(top, #ffffff, #e6e6e6);
   background-repeat: repeat-x;
   margin: 1rem 0;
-  border: 1px solid #c7ced6;
+  border: 1px solid #ffffff;
   display: block;
   text-decoration: none;
   padding: 1rem;
@@ -2015,14 +2027,6 @@ img {
 @media only screen and (min-width: 600px) {
   /* 600 =================================================== */
   #header-nav {
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-    background-color: #e6e6e6;
-    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: linear-gradient(top, #ffffff, #e6e6e6);
-    background-repeat: repeat-x;
     float: left;
     width: 100%;
     overflow: hidden;
@@ -2094,7 +2098,7 @@ img {
 /* URL: http://stuffandnonsense.co.uk/projects/320andup */
 .grid {
   margin-bottom: 1.5em;
-  border-bottom: 1px dashed #c7ced6;
+  border-bottom: 1px dashed #ffffff;
 }
 .grid:last-child {
   margin-bottom: 0;
@@ -2109,7 +2113,7 @@ img {
   margin: 0 12px 0 0;
   height: 44px;
   width: 44px;
-  background-color: #2d353e;
+  background-color: #929497;
   color: #ffffff;
   font-size: 32px;
   font-size: 3.2rem;
@@ -2193,9 +2197,9 @@ img {
 .full {
   margin-bottom: 1.5em;
   padding: 1.5em;
-  background-color: #f3f5f6;
-  border-top: 2px solid #c7ced6;
-  border-bottom: 2px solid #c7ced6;
+  background-color: #ffffff;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 .full .grids {
   width: 90%;

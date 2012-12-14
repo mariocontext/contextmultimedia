@@ -7,7 +7,33 @@
 
 // ==========================================================
 
+
 /* Typography =================================================== */
+
+@font-face {
+    font-family: 'nexa_lightregular';
+    src: url(Nexa_Free_Light-webfont.eot);
+    src: url(Nexa_Free_Light-webfont.eot?#iefix) format('embedded-opentype'),
+         url(Nexa_Free_Light-webfont.woff) format('woff'),
+         url(Nexa_Free_Light-webfont.ttf) format('truetype'),
+         url(Nexa_Free_Light-webfont.svg#nexa_lightregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'nexa_boldregular';
+    src: url(Nexa_Free_Bold-webfont.eot);
+    src: url(Nexa_Free_Bold-webfont.eot?#iefix) format('embedded-opentype'),
+         url(Nexa_Free_Bold-webfont.woff) format('woff'),
+         url(Nexa_Free_Bold-webfont.ttf) format('truetype'),
+         url(Nexa_Free_Bold-webfont.svg#nexa_boldregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 // HEADINGS ====================================================
 
@@ -18,7 +44,8 @@ h4,
 h5, 
 h6 {
 margin : 0;
-font-family : @baseheadingfont;
+//font-family : @baseheadingfont;
+font-family:@baseheadingfont;
 font-weight : @baseheadingfontweight;
 color : @baseheadingfontcolor;
 text-rendering : optimizelegibility; }
@@ -32,7 +59,9 @@ h1,
 .h1 { 
 margin-bottom : @baselineheight / 2;
 .font-size(32);
-line-height : 1.2; }
+line-height : 1.2; 
+color: #26A9E0;
+}
 
 h2,
 .h2 { 
